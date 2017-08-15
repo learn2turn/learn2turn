@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+endpointApiVersion=38.0
+endpointEnvironment=Production/Developer Edition
+endpointServer=login.salesforce.com
+httpsProtocol=true
+ideVersion=38.0
+keependpoint=false
+metadataFormatVersion=38.0
+namespacePrefix=learn2turn
+packageName=unpackaged
+preferToolingDeployment=true
+projectIdentifier=IDE-8856807644260121913
+readTimeout=400
+sessionId=
+username=learn2turn@yahoo.com

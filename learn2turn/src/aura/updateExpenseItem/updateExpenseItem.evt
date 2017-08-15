@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION">
+    <aura:attribute name="expense" type="learn2turn.Expense__c"/>
+</aura:event>

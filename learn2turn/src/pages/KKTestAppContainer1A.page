@@ -1,0 +1,16 @@
+<apex:page >
+    <apex:includeLightning />
+     This is a test.
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("learn2turn:KKTestApp1", function() {
+          $Lightning.createComponent("ui:button",
+          { label : "Press Me!" },
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+</apex:page>

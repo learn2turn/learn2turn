@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KKTest</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KKTests</value>
+    </caseValues>
+    <fields>
+        <label><!-- ExperFormulaField1A --></label>
+        <name>ExperFormulaField1A__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExperPushDown --></label>
+        <name>ExperPushDown__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra User --></label>
+        <name>Extra_User__c</name>
+        <relationshipLabel><!-- KKTests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- NewestChildAdded --></label>
+        <name>NewestChildAdded__c</name>
+    </fields>
+    <fields>
+        <label><!-- NewestChild --></label>
+        <name>NewestChild__c</name>
+        <relationshipLabel><!-- KKTests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SetByProcess --></label>
+        <name>SetByProcess__c</name>
+    </fields>
+    <fields>
+        <label><!-- SetByTrigger --></label>
+        <name>SetByTrigger__c</name>
+    </fields>
+    <fields>
+        <label><!-- SetByWorkflow --></label>
+        <name>SetByWorkflow__c</name>
+    </fields>
+    <fields>
+        <label><!-- SimpleText --></label>
+        <name>SimpleText__c</name>
+    </fields>
+    <fields>
+        <label><!-- TestAutoNumber --></label>
+        <name>TestAutoNumber__c</name>
+    </fields>
+    <layouts>
+        <layout>KKTest Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

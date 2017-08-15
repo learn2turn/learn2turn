@@ -1,0 +1,9 @@
+<aura:component controller="AttributeTypes">
+
+    <aura:attribute name="favoriteColors" type="String[]" default="cyan, yellow, magenta"/>
+    <aura:iteration items="{!v.favoriteColors}" var="str">
+        {!str}<br/>
+    </aura:iteration>
+    <ui:button press="{!c.getString}" label="Do It!"/>
+
+</aura:component>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KKTestChild</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KKTestChildren</value>
+    </caseValues>
+    <fields>
+        <label><!-- ExperPushDown --></label>
+        <name>ExperPushDown__c</name>
+    </fields>
+    <fields>
+        <label><!-- KKTest --></label>
+        <name>KKTest__c</name>
+        <relationshipLabel><!-- KKTestChildren --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

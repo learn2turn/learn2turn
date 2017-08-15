@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Contains the master definition for a particular type of restartable task.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Job_Description__c</fullName>
+        <description>Enter any documentation about what the job does here.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any documentation about what the job does here.</inlineHelpText>
+        <label>Job Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Max_Tries__c</fullName>
+        <externalId>false</externalId>
+        <label>Max Tries</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Operator_Instructions__c</fullName>
+        <description>Enter any information an operator monitoring the job would need to know such as what to check, restart instructions, escalation.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enter any information an operator monitoring the job would need to know such as what to check, restart instructions, escalation.</inlineHelpText>
+        <label>Operator Instructions</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Processor_Class_Name__c</fullName>
+        <description>The name of a class that will be instantiated to do the work for this job.  The class must implement interface ProcessJobProcessor.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of a class that will be instantiated to do the work for this job.  The class must implement interface ProcessJobProcessor.</inlineHelpText>
+        <label>Processor Class Name</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Retryable_Via_Batchable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Task will await being rerun by a batchable after failed run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Task will await being rerun by a batchable after failed run.</inlineHelpText>
+        <label>Retryable Via Batchable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Retryable_Via_Queueable__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Task will automatically requeue itself after failed run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Task will automatically requeue itself after failed run.</inlineHelpText>
+        <label>Retryable Via Queueable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Retryable__c</fullName>
+        <externalId>false</externalId>
+        <formula>Retryable_Via_Batchable__c  ||  Retryable_Via_Queueable__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Retryable</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Process Job Master</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Process Job Type</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Process Job Masters</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Processor_Class_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Max_Tries__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Retryable__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Retryable_Via_Batchable__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Retryable_Via_Queueable__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

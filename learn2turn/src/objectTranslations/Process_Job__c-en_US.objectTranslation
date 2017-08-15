@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Process Job</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Process Jobs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Input data for the processor for this job.  Contents are dependent on the process. Deserializing this JSON should create one class that contains all data for the processor to run. --></help>
+        <label><!-- Job Input JSON --></label>
+        <name>Job_Input_JSON__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Type Name --></label>
+        <name>Job_Type_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the type of job this is. --></help>
+        <label><!-- Process Job Master --></label>
+        <name>Process_Job_Master__c</name>
+        <relationshipLabel><!-- Process Jobs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Optional datetime that is the earliest time the job will be restarted.  This is included in case it should always wait for some scheduled process to run before trying again. --></help>
+        <label><!-- Retry After Datetime --></label>
+        <name>Retry_After_Datetime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Long status description for last run of job. --></help>
+        <label><!-- Status Details --></label>
+        <name>Status_Details__c</name>
+    </fields>
+    <fields>
+        <help><!-- Short status message for last run of job. --></help>
+        <label><!-- Status Message --></label>
+        <name>Status_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Waiting - -  Has never run.
+Queued - -  Waring to run in background.
+Processing - -  Job is running.
+Succeeded - -  Ran and succeeded.
+Failed - -  The last attempt to run failed.
+Fatal - -  A serious error that prevents attempt at restart occurred. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fatal</masterLabel>
+            <translation><!-- Fatal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processing</masterLabel>
+            <translation><!-- Processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Succeeded</masterLabel>
+            <translation><!-- Succeeded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting</masterLabel>
+            <translation><!-- Waiting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tries Exhausted --></label>
+        <name>Tries_Exhausted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the number of attempts to run the job.  Starts as zero.  Should not exceed Max Tries for the job type. --></help>
+        <label><!-- Try Count --></label>
+        <name>Try_Count__c</name>
+    </fields>
+    <layouts>
+        <layout>Process Job Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

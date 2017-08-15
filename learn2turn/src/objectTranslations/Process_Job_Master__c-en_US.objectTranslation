@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Process Job Master</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Process Job Masters</value>
+    </caseValues>
+    <fields>
+        <help><!-- Enter any documentation about what the job does here. --></help>
+        <label><!-- Job Description --></label>
+        <name>Job_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Max Tries --></label>
+        <name>Max_Tries__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter any information an operator monitoring the job would need to know such as what to check, restart instructions, escalation. --></help>
+        <label><!-- Operator Instructions --></label>
+        <name>Operator_Instructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of a class that will be instantiated to do the work for this job.  The class must implement interface ProcessJobProcessor. --></help>
+        <label><!-- Processor Class Name --></label>
+        <name>Processor_Class_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Task will await being rerun by a batchable after failed run. --></help>
+        <label><!-- Retryable Via Batchable --></label>
+        <name>Retryable_Via_Batchable__c</name>
+    </fields>
+    <fields>
+        <help><!-- Task will automatically requeue itself after failed run. --></help>
+        <label><!-- Retryable Via Queueable --></label>
+        <name>Retryable_Via_Queueable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retryable --></label>
+        <name>Retryable__c</name>
+    </fields>
+    <layouts>
+        <layout>Process Job Master Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,15 @@
+<aura:component >
+ 
+    <aura:attribute name="message" type="String" default="You may click when ready Gridley."/>
+ 
+    <p>Message of the day: <ui:outputText value="{!v.message}"/></p>
+ 
+    <div>
+        <ui:button label="It looks sunny out today."
+            press="{!c.handleClick}"/>
+ 
+        <ui:button label="Tut, tut, it looks like rain."
+            press="{!c.handleClick}"/>
+    </div>
+ 
+</aura:component>

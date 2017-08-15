@@ -1,0 +1,58 @@
+<apex:page >
+     <script src="../../soap/ajax/40.0/connection.js"
+          type="text/javascript"></script>
+    
+    <script>
+   
+    sforce.connection.sessionId = "{!$Api.Session_ID}";
+
+
+    var result = sforce.connection.describeLayout("Account");
+    
+    var layouts = result.getArray("layouts");
+    for (var i=0; i<layouts.length; i++) {
+      var layout = layouts[0];
+	  var buttons = layout.buttonLayoutSection. detailButtons;
+      var quickActions = layout.quickActionList;  
+    }
+    
+    for (var i=0; i<layouts.length; i++) {
+      var layout = layouts[0];
+      detailLayoutSections(layout.detailLayoutSections);
+    }
+
+    /* 
+    for (var i=0; i<layouts.length; i++) {
+      var layout = layouts[0];
+      detailLayoutSections(layout.detailLayoutSections);
+    }
+    
+     function detailLayoutSections(sections) {
+      for (var i=0; i<sections.length; i++) {
+        var section = sections[i];
+        console.log(section.columns + ":" + section.heading + ":");
+        layoutRows(section.getArray("layoutRows"));
+      }
+    }
+    
+    function layoutRows(rows) {
+      for (var i=0; i<rows.length; i++) {
+        var row = rows[i];
+        layoutItems(row.getArray("layoutItems"));
+      }
+    }
+    
+    function layoutItems(items) {
+      for (var i=0; i<items.length; i++) {
+        var item = items[i];
+        console.log("  " + item.label);
+      }
+    }
+    
+    */
+    </script>
+
+
+
+
+</apex:page>

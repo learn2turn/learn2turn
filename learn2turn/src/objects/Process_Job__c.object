@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents one unit of work that is waiting to be processed, being processed, or has been processed successfully or with error.  Jobs may be rerunnable. In the current module, jobs should be all-or-nothing, either they do fail and leave no changes or succeed and do able changes.  Thus, they may always be completely rerun.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Job_Input_JSON__c</fullName>
+        <description>Input data for the processor for this job.  Contents are dependent on the process. Deserializing this JSON should create one class that contains all data for the processor to run.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Input data for the processor for this job.  Contents are dependent on the process. Deserializing this JSON should create one class that contains all data for the processor to run.</inlineHelpText>
+        <label>Job Input JSON</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Job_Type_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Process_Job_Master__r.Name</formula>
+        <label>Job Type Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Process_Job_Master__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Identifies the type of job this is.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the type of job this is.</inlineHelpText>
+        <label>Process Job Master</label>
+        <referenceTo>Process_Job_Master__c</referenceTo>
+        <relationshipLabel>Process Jobs</relationshipLabel>
+        <relationshipName>Process_Jobs</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Retry_After_Datetime__c</fullName>
+        <description>Optional datetime that is the earliest time the job will be restarted.  This is included in case it should always wait for some scheduled process to run before trying again.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Optional datetime that is the earliest time the job will be restarted.  This is included in case it should always wait for some scheduled process to run before trying again.</inlineHelpText>
+        <label>Retry After Datetime</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Status_Details__c</fullName>
+        <description>Long status description for last run of job.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Long status description for last run of job.</inlineHelpText>
+        <label>Status Details</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Status_Message__c</fullName>
+        <description>Short status message for last run of job.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Short status message for last run of job.</inlineHelpText>
+        <label>Status Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <description>Waiting -- Has never run.
+Queued -- Waring to run in background.
+Processing -- Job is running.
+Succeeded -- Ran and succeeded.
+Failed -- The last attempt to run failed.
+Fatal -- A serious error that prevents attempt at restart occurred.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Waiting -- Has never run.
+Queued -- Waring to run in background.
+Processing -- Job is running.
+Succeeded -- Ran and succeeded.
+Failed -- The last attempt to run failed.
+Fatal -- A serious error that prevents attempt at restart occurred.</inlineHelpText>
+        <label>Status</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Waiting</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Queued</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Processing</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Succeeded</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Fatal</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Tries_Exhausted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tries Exhausted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Try_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>Identifies the number of attempts to run the job.  Starts as zero.  Should not exceed Max Tries for the job type.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Identifies the number of attempts to run the job.  Starts as zero.  Should not exceed Max Tries for the job type.</inlineHelpText>
+        <label>Try Count</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Process Job</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>pj-{000000000}</displayFormat>
+        <label>Process Job Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Process Jobs</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Process_Job_Master__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Try_Count__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Tries_Exhausted__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status_Message__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Retry_After_Datetime__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>
